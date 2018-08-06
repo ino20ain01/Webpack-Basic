@@ -1,0 +1,12 @@
+{
+  "name": "Webpack-Basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ino20ain01/Webpack-Basic.git",
+  "author": "Nguyễn Quán Chung",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
