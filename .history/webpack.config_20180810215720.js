@@ -30,7 +30,7 @@ const config = {
                 exclude: '/node_modules'
             },
             {
-                use: ['style-loader', 'css-loader'],
+                use: ['css-loader, style-loader'],
                 test: /\.css$/
             },
             {
