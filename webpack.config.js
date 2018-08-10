@@ -11,6 +11,7 @@ const VENDOR_LIBS = [
     'redux',
     'redux-thunk',
 ];
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: {
@@ -29,7 +30,10 @@ const config = {
                 exclude: '/node_modules'
             },
             {
-                use: ['style-loader', 'css-loader'],
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader',
+                    fallback: 'style-loader'
+                }),
                 test: /\.css$/
             },
             {
@@ -45,8 +49,20 @@ const config = {
             'window.$': 'jquery',
             'window.jQuery': 'jquery',
             'Popper': ['popper.js', 'default'],
-        })
-    ]
+        }),
+        new ExtractTextPlugin('style.css')
+    ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: 'vendor',
+                    chunks: 'initial',
+                    minChunks: 2
+                }
+            } 
+        }
+    }
 }
 
 module.exports = config;
