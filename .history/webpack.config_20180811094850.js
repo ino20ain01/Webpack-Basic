@@ -12,7 +12,6 @@ const VENDOR_LIBS = [
     'redux-thunk',
 ];
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 
 const config = {
     entry: {
@@ -50,9 +49,6 @@ const config = {
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        }),
-        new ManifestPlugin({
-            writeToFileEmit: true
         })
     ],
     optimization: {
@@ -63,7 +59,7 @@ const config = {
                     chunks: 'initial',
                     minChunks: 2
                 }
-            }
+            } 
         }
     }
 }

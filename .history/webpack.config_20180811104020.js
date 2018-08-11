@@ -51,9 +51,7 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
-        new ManifestPlugin({
-            writeToFileEmit: true
-        })
+        new ManifestPlugin()
     ],
     optimization: {
         splitChunks: {

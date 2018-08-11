@@ -11,8 +11,7 @@ const VENDOR_LIBS = [
     'redux',
     'redux-thunk',
 ];
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: {
@@ -20,7 +19,7 @@ const config = {
         vendor: VENDOR_LIBS
     },
     output: {
-        filename: '[name].[chunkhash].js',
+        filename: '[name].js',
         path: path.join(__dirname, 'dist'),
     }, 
     module: {
@@ -31,7 +30,10 @@ const config = {
                 exclude: '/node_modules'
             },
             {
-                use: ['style-loader', 'css-loader'],
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader',
+                    fallback: 'style-loader'
+                }),
                 test: /\.css$/
             },
             {
@@ -48,13 +50,9 @@ const config = {
             'window.jQuery': 'jquery',
             'Popper': ['popper.js', 'default'],
         }),
-        new HtmlWebpackPlugin({
-            template: 'src/index.html'
-        }),
-        new ManifestPlugin({
-            writeToFileEmit: true
-        })
+        new ExtractTextPlugin('style.css')
     ],
+    avbc
     optimization: {
         splitChunks: {
             cacheGroups: {
@@ -63,7 +61,7 @@ const config = {
                     chunks: 'initial',
                     minChunks: 2
                 }
-            }
+            } 
         }
     }
 }

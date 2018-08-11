@@ -12,7 +12,6 @@ const VENDOR_LIBS = [
     'redux-thunk',
 ];
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 
 const config = {
     entry: {
@@ -50,20 +49,17 @@ const config = {
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        }),
-        new ManifestPlugin({
-            writeToFileEmit: true
         })
     ],
     optimization: {
         splitChunks: {
             cacheGroups: {
                 commons: {
-                    name: 'vendor',
+                    name: ['vendor', 'manifest'],
                     chunks: 'initial',
                     minChunks: 2
                 }
-            }
+            } 
         }
     }
 }

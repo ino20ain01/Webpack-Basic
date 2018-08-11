@@ -52,7 +52,7 @@ const config = {
             template: 'src/index.html'
         }),
         new ManifestPlugin({
-            writeToFileEmit: true
+            publicPath: path.join(__dirname, 'dist/')
         })
     ],
     optimization: {
