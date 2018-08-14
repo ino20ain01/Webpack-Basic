@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, HashRouter } from 'react-router
 import routes from '../../routes';
 import './App.css';
 import Menus from '../Menus/Menus'
+console.log('aaa')
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
 
     render () {
         return (
-        <Router>
+        <HashRouter>
             <Fragment>
                 { /* MENU */ }
                 <Menus/>
@@ -35,7 +36,7 @@ class App extends Component {
                     </div>
                 </div>
             </Fragment>
-        </Router>
+        </HashRouter>
         )
     }
 }

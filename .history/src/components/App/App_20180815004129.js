@@ -25,7 +25,7 @@ class App extends Component {
 
     render () {
         return (
-        <Router>
+        <HashRouter>
             <Fragment>
                 { /* MENU */ }
                 <Menus/>
@@ -35,7 +35,7 @@ class App extends Component {
                     </div>
                 </div>
             </Fragment>
-        </Router>
+        </HashRouter>
         )
     }
 }
