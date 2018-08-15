@@ -22,12 +22,12 @@ const devServer = {
     stats: 'minimal',
     inline: true,
     compress: true,
-    contentBase: path.join(__dirname),
+    contentBase: '/',
     noInfo: true,
     clientLogLevel: 'none',
-    overlay: {
-        errors: true
-    },
+    proxy: {
+        "**": "http://localhost:6868"
+    }
 }
 
 const config = {

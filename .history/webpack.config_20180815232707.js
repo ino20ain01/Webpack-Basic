@@ -22,12 +22,9 @@ const devServer = {
     stats: 'minimal',
     inline: true,
     compress: true,
-    contentBase: path.join(__dirname),
+    publicPath: '/dist/',
     noInfo: true,
     clientLogLevel: 'none',
-    overlay: {
-        errors: true
-    },
 }
 
 const config = {

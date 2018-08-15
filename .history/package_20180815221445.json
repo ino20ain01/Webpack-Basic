@@ -28,7 +28,7 @@
     "scripts": {
         "clean": "rimraf dist",
         "build": "yarn run clean && webpack --config webpack.config.js",
-        "serve": "webpack-dev-server"
+        "server": "webpack-dev-server"
     },
     "dependencies": {
         "axios": "^0.18.0",

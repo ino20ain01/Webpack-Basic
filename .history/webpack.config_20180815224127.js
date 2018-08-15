@@ -22,12 +22,7 @@ const devServer = {
     stats: 'minimal',
     inline: true,
     compress: true,
-    contentBase: path.join(__dirname),
-    noInfo: true,
-    clientLogLevel: 'none',
-    overlay: {
-        errors: true
-    },
+    contentBase: path.resolve(__dirname)
 }
 
 const config = {
@@ -43,7 +38,7 @@ const config = {
         rules: [
             {
                 use: 'babel-loader',
-                test: /\.js[x]?$/,
+                test: /\.js$/,
                 exclude: '/node_modules'
             },
             {

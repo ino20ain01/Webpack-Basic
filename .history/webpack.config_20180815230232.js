@@ -27,7 +27,7 @@ const devServer = {
     clientLogLevel: 'none',
     overlay: {
         errors: true
-    },
+    }
 }
 
 const config = {

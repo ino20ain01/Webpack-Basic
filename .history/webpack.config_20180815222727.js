@@ -16,18 +16,13 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const devServer = {
     port: 6868,
     open: true,
-    disableHostCheck: true,
+    disabledHostCheck: true,
     historyApiFallback: true,
     overlay: true,
     stats: 'minimal',
     inline: true,
     compress: true,
-    contentBase: path.join(__dirname),
-    noInfo: true,
-    clientLogLevel: 'none',
-    overlay: {
-        errors: true
-    },
+    contentBase: '/'
 }
 
 const config = {
@@ -43,7 +38,7 @@ const config = {
         rules: [
             {
                 use: 'babel-loader',
-                test: /\.js[x]?$/,
+                test: /\.js$/,
                 exclude: '/node_modules'
             },
             {

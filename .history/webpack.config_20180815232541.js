@@ -22,12 +22,10 @@ const devServer = {
     stats: 'minimal',
     inline: true,
     compress: true,
-    contentBase: path.join(__dirname),
+    contentBase: './<%= pkg.src %>/',
     noInfo: true,
     clientLogLevel: 'none',
-    overlay: {
-        errors: true
-    },
+    webpack: webpackDevConfig,
 }
 
 const config = {

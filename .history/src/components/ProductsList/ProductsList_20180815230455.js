@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+console.log('aaa')
 class ProductsList extends Component {
     render() {
         return (

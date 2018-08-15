@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+
 class ProductsList extends Component {
     render() {
         return (
             <div className="panel panel-primary">
                 <div className="panel-heading">
                     <h3 className="panel-title">Danh sách sản phẩm</h3>
+                    <a href="#">aaa</a>
                 </div>
                 <div className="panel-body">
                     <table className="table table-bordered table-hover">

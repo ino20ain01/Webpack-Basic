@@ -28,6 +28,9 @@ const devServer = {
     overlay: {
         errors: true
     },
+    proxy: {
+        "**": "http://localhost:9090"
+    }
 }
 
 const config = {
